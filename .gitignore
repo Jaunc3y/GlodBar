@@ -1,0 +1,26 @@
+# SwiftPM and local build output
+.build/
+.swiftpm/
+DerivedData/
+
+# Packaged local artifacts
+/dist/
+*.app/
+*.dmg
+
+# Generated previews and local verification files
+*.png
+!assets/GoldBar-icon.png
+*.icns
+.DS_Store
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
