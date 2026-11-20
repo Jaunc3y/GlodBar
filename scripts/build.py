@@ -25,12 +25,13 @@ from PIL import Image, ImageDraw
 from io import BytesIO
 import struct
 source = Image.open(ROOT / "assets/GoldBar-icon.png").convert("RGBA")
-# Remove only the light exterior connected to the canvas edge, not gold highlights.
-mask = source.convert("L").point(lambda value: 255 if value > 120 else 0)
-ImageDraw.floodfill(mask, (0, 0), 128, thresh=0)
-alpha = mask.point(lambda value: 0 if value == 128 else 255)
-source.putalpha(alpha)
-source.save(ROOT / "assets/GoldBar-icon-transparent.png", optimize=True)
+# The committed source is already transparent; keep this guard for old copies.
+if source.getchannel("A").getextrema() == (255, 255):
+    # Remove only the light exterior connected to the canvas edge, not gold highlights.
+    mask = source.convert("L").point(lambda value: 255 if value > 120 else 0)
+    ImageDraw.floodfill(mask, (0, 0), 128, thresh=0)
+    alpha = mask.point(lambda value: 0 if value == 128 else 255)
+    source.putalpha(alpha)
 elements = []
 for pixels, kind in ((16, b"icp4"), (32, b"icp5"), (64, b"icp6"), (128, b"ic07"), (256, b"ic08")):
     image = source.resize((pixels, pixels), Image.Resampling.LANCZOS)
