@@ -1,6 +1,10 @@
-# 积存金 GoldBar
+# GlodBar
 
 一个运行在 macOS 15+ 菜单栏中的工行积存金行情查看工具。
+
+![GlodBar 设置界面](docs/settings-preview.png)
+
+设置界面支持选择刷新间隔、配置上下限价格提醒，并发送测试通知。
 
 它从工行公开行情页面读取「主动积存」价格，在菜单栏右侧直接显示两位小数，例如 `862.86`；点击价格后可以设置刷新间隔、价格提醒或退出应用。
 
@@ -42,8 +46,8 @@
 
 ```sh
 # 获取源码
-git clone https://github.com/Jaunc3y/goldbar-macos.git
-cd GoldBar
+git clone https://github.com/Jaunc3y/GlodBar.git
+cd GlodBar
 
 # 安装构建脚本所需的 Pillow（可使用项目自己的虚拟环境）
 python3 -m pip install Pillow

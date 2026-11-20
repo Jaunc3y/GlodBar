@@ -11,6 +11,7 @@ DerivedData/
 # Generated previews and local verification files
 *.png
 !assets/GoldBar-icon.png
+!docs/settings-preview.png
 *.icns
 .DS_Store
 
