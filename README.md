@@ -2,8 +2,8 @@
 
 一个运行在 macOS 15+ 菜单栏中的工行积存金行情查看工具。
 
-![GlodBar 设置界面](docs/settings-preview.png)
 ![GlodBar 菜单栏界面](docs/menubar-preview.png)
+![GlodBar 设置界面](docs/settings-preview.png)
 
 设置界面支持选择刷新间隔、配置上下限价格提醒，并发送测试通知；菜单栏界面直接显示当前积存金价格。
 
@@ -21,14 +21,6 @@
 - 严格低于 / 高于才触发，相等不触发；持续超限只提醒一次
 - 网络失败时保留最近一次成功价格并显示 `!`；从未成功时显示 `--.--`
 - 无第三方运行时依赖，不需要银行账号或登录
-
-## 数据来源
-
-公开行情页面：
-
-<https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/goldaccrual_query_out.jsp>
-
-工行页面本身以约 60 秒更新一次，因此更短的本地刷新间隔不代表行情一定更快更新。
 
 ## 下载和安装
 
