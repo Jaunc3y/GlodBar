@@ -12,6 +12,7 @@ DerivedData/
 *.png
 !assets/GoldBar-icon.png
 !docs/settings-preview.png
+!docs/menubar-preview.png
 *.icns
 .DS_Store
 
